@@ -7,10 +7,17 @@ use Illuminate\Http\Request;
 class ProfileController extends Controller
 {
     public function index(){
-        $data = "Hello world";
-        
-        $firstname = "Cyan";
-        $lastname = "Vega";
-        return view('pages.profile', compact('data','lastname','firstname'));
+
+        $data = [
+            'name' => 'Cyanne Justin Vega',
+            'bio' => 'Web Developer | Tech Enthusiast | Raspberry Pi Fan',
+            'skills' => ['HTML', 'CSS', 'JavaScript', 'Python'],
+            'email' => 'cyanne@gmail.com',
+            'phone' => '+123456789'
+        ];
+
+        return view('pages.profile', $data);
+
+
     }
 }

@@ -7,99 +7,121 @@
     <title>Educational Background</title>
     <style>
         * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-}
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
 
-.education-container {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 500px;
-    overflow: hidden;
-}
+        .education-container {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 600px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
 
-.education-header {
-    background-color: #2ecc71;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
+        .education-container:hover {
+            transform: translateY(-10px);
+        }
 
-.education-header h1 {
-    font-size: 24px;
-}
+        .education-header {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
 
-.education-details {
-    padding: 20px;
-}
+        .education-header h1 {
+            font-size: 28px;
+            font-weight: bold;
+        }
 
-.education-item {
-    margin-bottom: 20px;
-}
+        .education-details {
+            padding: 30px;
+        }
 
-.education-item h2 {
-    font-size: 18px;
-    color: #3498db;
-    margin-bottom: 5px;
-}
+        .education-item {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
 
-.education-item p {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 5px;
-}
+        .education-item:last-child {
+            border-bottom: none;
+        }
 
-.education-item ul {
-    padding-left: 20px;
-    list-style-type: disc;
-}
+        .education-item h2 {
+            font-size: 20px;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
 
-.education-item li {
-    font-size: 14px;
-    color: #555;
-}
+        .education-item p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
 
+        .education-item ul {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+
+        .education-item li {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .home-link {
+            display: inline-block;
+            margin: 15px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .home-link:hover {
+            color: #2ecc71;
+        }
     </style>
 </head>
 <body>
     <div class="education-container">
-
-            <a href="{{ url('/home') }}">Home</a>
+        <a href="{{ url('/home') }}" class="home-link">Home</a>
 
         <header class="education-header">
             <h1>Educational Background</h1>
         </header>
         
         <div class="education-details">
-            <div class="education-item">
-                <h2>Bachelor of Science in Information Technology</h2>
-                <p><strong>XYZ University</strong> - 2021 to present</p>
-                <p>Specialized in Web Development, and IoT technologies.</p>
-            </div>
-            
-            <div class="education-item">
-                <h2>High School Diploma</h2>
-                <p><strong>ABC High School</strong> - 2014 to 2018</p>
-                <p>Participated in computer science clubs and science fairs, developed foundational skills in programming and electronics.</p>
-            </div>
+            @foreach($education as $edu)
+                <div class="education-item">
+                    <h2>{{ $edu['degree'] }}</h2>
+                    <p><strong>{{ $edu['institution'] }}</strong> - {{ $edu['duration'] }}</p>
+                    <p>{{ $edu['description'] }}</p>
+                </div>
+            @endforeach
 
             <div class="education-item">
                 <h2>Certifications</h2>
                 <ul>
-                    <li>Certified Python Developer - 2020</li>
-                    <li>Web Development Bootcamp - 2021</li>
+                    @foreach($certifications as $certification)
+                        <li>{{ $certification }}</li>
+                    @endforeach
                 </ul>
             </div>
         </div>
