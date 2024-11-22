@@ -19,7 +19,7 @@ class EducationalController extends Controller
                 [
                     'degree' => 'High School Diploma',
                     'institution' => 'ABC High School',
-                    'duration' => '2014 to 2018',
+                    'duration' => '2023 to 2025',
                     'description' => 'Participated in computer science clubs and science fairs, developed foundational skills in programming and electronics.'
                 ]
             ],

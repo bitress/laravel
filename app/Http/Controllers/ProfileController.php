@@ -11,7 +11,7 @@ class ProfileController extends Controller
         $data = [
             'name' => 'Cyanne Justin Vega',
             'bio' => 'Web Developer | Tech Enthusiast | Raspberry Pi Fan',
-            'skills' => ['HTML', 'CSS', 'JavaScript', 'Python'],
+            'skills' => ['HTML', 'CSS', 'JavaScript', 'Python', 'PHP'],
             'email' => 'cyanne@gmail.com',
             'phone' => '+123456789'
         ];

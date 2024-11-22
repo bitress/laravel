@@ -1,21 +1,12 @@
 <?php
 
-use App\Http\Controllers\EducationalController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+use App\Http\Controllers\BookController;
 
-Route::get('/', function () {
-    return view('home');
+Route::get('/app', function () {
+    return view('pages.dashboard');
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
-
-
-Route::get('/profile', [ProfileController::class, 'index'] );
-
-
-
-
-Route::get('/educational-background', [EducationalController::class, 'index']);
+Route::get('/book', [BookController::class, 'index']);
