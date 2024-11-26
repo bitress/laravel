@@ -2,22 +2,21 @@
 
 @section('content')
 
-@if(Session::has('success'))
-    <p class="alert alert-success">{{ Session::get('success')}}</p>
-@else
-    <!-- <p class="alert alert-danger">Error!</p> -->
-
-@endif
+@if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
 
             <div class="wrapper wrapper-content">
                 <div class="animated fadeInRightBig">
-                    <a href="{{ url('/book-form') }}" class="btn btn-primary">Add book</a>
+                    <a href="{{ url('/book/new') }}" class="btn btn-primary">Add book</a>
 
                     <div class="row">
                     @foreach($data as $d)
                         <div class="col">
                             <div class="card" style="width:200px">
-                                <img class="card-img-top" src="{{ $d->photo }}" alt="Card image" style="width:100%">
+                                <img class="card-img-top" src="{{ asset('uploads/' . $d->photo)  }}" alt="Card image" style="width:100%">
                                 <div class="card-body">
                                 <h4 class="card-title">{{ $d->title }}</h4>
                                 <p class="card-text">Country code: {{ $d->country_id }}

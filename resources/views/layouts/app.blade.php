@@ -29,7 +29,7 @@
             <ul class="nav metismenu" id="side-menu">
                 <li class="nav-header">
                     <div class="dropdown profile-element">
-                        <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
+                        <img alt="image" class="rounded-circle" src="https://avatars.githubusercontent.com/u/16523328?v=4" width="50px"/>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="block m-t-xs font-bold">Cyanne Justin Vega</span>
                             <span class="text-muted text-xs block">Art Director <b class="caret"></b></span>
@@ -53,18 +53,9 @@
                     <a href="{{ url('/book') }}"><i class="fa fa-book"></i> <span class="nav-label">Books</span></a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li><a href="basic_gallery.html">Lightbox Gallery</a></li>
-                        <li><a href="slick_carousel.html">Slick Carousel</a></li>
-                        <li><a href="carousel.html">Bootstrap Carousel</a></li>
+                    <a href="#"><i class="fa fa-magic"></i> <span class="nav-label">CSS Animations </span><span class="label label-info float-right">62</span></a>
+                </li>
 
-                    </ul>
-                </li>
-                <li>
-                    <a href="css_animation.html"><i class="fa fa-magic"></i> <span class="nav-label">CSS Animations </span><span class="label label-info float-right">62</span></a>
-                </li>
-                
             </ul>
 
         </div>
@@ -83,7 +74,7 @@
         </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li>
-                    <span class="m-r-sm text-muted welcome-message">Bitress Dashboard</span>
+                    <span class="m-r-sm text-muted welcome-message"> Dashboard</span>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
@@ -143,7 +134,7 @@
 
         </nav>
         </div>
-        
+
 
         @yield('content')
 
